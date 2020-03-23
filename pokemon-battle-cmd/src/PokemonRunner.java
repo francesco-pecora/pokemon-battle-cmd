@@ -2,7 +2,9 @@
 public class PokemonRunner {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Player newPlayer = new Player(false);
+		System.out.println(newPlayer.getName());
 
 	}
 

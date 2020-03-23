@@ -14,6 +14,7 @@ public class Pokemon {
 	
 	private int POKEMON_SIZE = 3;
 	private int ATTACK_SIZE = 4;
+	private String PATH = "C:\\Users\\franc\\Desktop\\gitHubRepositories\\pokemon-battle-cmd\\pokemon-battle-cmd\\src\\pokemon\\";
 	
 	
 	// class constructors
@@ -25,9 +26,9 @@ public class Pokemon {
 		
 		try {
 			// picking a random pokemon between the three starters
-			if(randomNumber == 1) input = new Scanner(new File("./Bulbasaur.txt"));
-			else if(randomNumber == 2) input = new Scanner(new File("./Charmender.txt"));
-			else if(randomNumber == 3) input = new Scanner(new File("./Squirtle.txt"));
+			if(randomNumber == 1) input = new Scanner(new File(PATH + "Bulbasaur"));
+			else if(randomNumber == 2) input = new Scanner(new File(PATH + "Charmender"));
+			else if(randomNumber == 3) input = new Scanner(new File(PATH + "Squirtle"));
 			else throw new IllegalStateException("Random number is not in the right range...");
 		}
 		 catch (Exception e) {
