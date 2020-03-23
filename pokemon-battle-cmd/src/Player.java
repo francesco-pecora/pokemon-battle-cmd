@@ -26,7 +26,7 @@ public class Player {
 			}
 		}
 		else {
-			throw new IllegalStateException("If a human player, pass the name (String) and an array of Pokemon...");
+			throw new IllegalStateException("If a human player, pass the name as a String to the constructor...");
 		}
 	}
 	
@@ -38,6 +38,20 @@ public class Player {
 		return name;
 	}
 	
+	// battling methods
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
+	
+	// output function
 	public String toString() {
 		String s = "";
 		s += "\n";
