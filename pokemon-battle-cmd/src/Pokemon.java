@@ -1,6 +1,7 @@
 import java.util.Scanner; 
 import java.io.File;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Pokemon {
 
@@ -37,7 +38,20 @@ public class Pokemon {
 			 System.exit(0);	 
 		 }
 		
-		// CODE TO INITIALIZE THE ATTACK LIST
+		// initializing class data
+		ArrayList<String> pokemonData = new ArrayList<String>();
+		while(input.hasNext()) {
+			pokemonData.add(input.next());
+		}
+		name = pokemonData.get(0);
+		type = pokemonData.get(1);
+		health = Integer.parseInt(pokemonData.get(2));
+		
+		// initializing attackList
+		attackList = new Attack[ATTACK_SIZE];
+		for(int i = 0; i < ATTACK_SIZE; i++) {
+			attackList[i] = new Attack(type);
+		}
 		
 	}
 	

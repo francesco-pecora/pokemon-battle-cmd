@@ -8,9 +8,12 @@ public class Player {
 	private int POKEMON_SIZE = 3;
 	
 	// constructor
-	public Player(String n, Pokemon[] p) {
+	public Player(String n) {
 		name = n;
-		pokemonList = p;
+		pokemonList = new Pokemon[POKEMON_SIZE];
+		for(int i = 0; i < POKEMON_SIZE; i++) {		// random pokemonList for computer using Pokemon constructor
+			pokemonList[i] = new Pokemon();
+		}
 		isHuman = true;
 	}
 	
@@ -33,6 +36,24 @@ public class Player {
 	}
 	public String getName() {
 		return name;
+	}
+	
+	public String toString() {
+		String s = "";
+		s += "\n";
+		s += "Player Name: ";
+		s += name;
+		s += "\n";
+		for(Pokemon p : pokemonList) {
+			s += "\n";
+			s += p.getName();
+			s += "\t";
+			s += p.getType();
+			s += "\t";
+			s += Integer.toString(p.getHealth());
+			s += "\n";
+		}
+		return s;
 	}
 	
 }
