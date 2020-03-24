@@ -76,4 +76,8 @@ public class Pokemon {
 	public int getHealth() {
 		return health;
 	}
+	
+	public Attack[] getAttackList() {
+		return attackList;
+	}
 }

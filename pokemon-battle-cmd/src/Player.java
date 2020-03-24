@@ -5,7 +5,7 @@ public class Player {
 	private String name;
 	private Pokemon[] pokemonList;
 	private boolean isHuman;
-	private int POKEMON_SIZE = 3;
+	private int POKEMON_SIZE = 1;
 	
 	// constructor
 	public Player(String n) {
@@ -66,6 +66,14 @@ public class Player {
 			s += "\t";
 			s += Integer.toString(p.getHealth());
 			s += "\n";
+			for(Attack a : p.getAttackList()) {
+				s += a.getName();
+				s += "\n";
+				s += a.getPossibleHits();
+				s += "\n";
+				s += a.getDamage();
+				s += "\n";
+			}
 		}
 		return s;
 	}

@@ -9,6 +9,7 @@ public class Attack {
 	private String name;
 	private String type;
 	private int possibleHits;
+	private int damage;
 	
 	Scanner input;
 	
@@ -32,9 +33,11 @@ public class Attack {
 		// getting the data from the file into an Array List of Strings
 		ArrayList<String> attacks = new ArrayList<String>();
 		ArrayList<String> hits = new ArrayList<String>();
+		ArrayList<String> damages = new ArrayList<String>();
 		while(input.hasNextLine()){
 			attacks.add(input.next());
 			hits.add(input.next());
+			damages.add(input.next());
 		}
 		
 		// select a random attack from the list
@@ -45,6 +48,7 @@ public class Attack {
 		name = attacks.get(randomNumber);
 		type = pokeType;
 		possibleHits = Integer.parseInt(hits.get(randomNumber));
+		damage = Integer.parseInt(damages.get(randomNumber));
 	}
 	
 	public Attack(String n, String t, int p) {
@@ -73,6 +77,10 @@ public class Attack {
 	}
 	public int getPossibleHits() {
 		return possibleHits;
+	}
+	
+	public int getDamage() {
+		return damage;
 	}
 	
 }
