@@ -5,9 +5,9 @@ public class Player {
 	private String name;
 	private Pokemon[] pokemonList;
 	private boolean isHuman;
-	private int POKEMON_SIZE = 1;
+	private int POKEMON_SIZE = 3;
 	
-	// constructor
+	// constructors
 	public Player(String n) {
 		name = n;
 		pokemonList = new Pokemon[POKEMON_SIZE];
