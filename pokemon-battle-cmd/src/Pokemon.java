@@ -13,8 +13,8 @@ public class Pokemon {
 	
 	Scanner input;
 	
-	private int POKEMON_SIZE = 3;
-	private int ATTACK_SIZE = 4;
+	private int POKEMON_SIZE = 3;  // number of pokemon a player can have
+	private int ATTACK_SIZE = 4;   // number of attacks each pokemon has
 	private String PATH = "C:\\Users\\franc\\Desktop\\gitHubRepositories\\pokemon-battle-cmd\\pokemon-battle-cmd\\src\\pokemon\\";
 	
 	
