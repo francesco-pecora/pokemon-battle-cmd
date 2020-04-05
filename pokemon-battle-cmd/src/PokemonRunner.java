@@ -8,11 +8,11 @@ public class PokemonRunner {
 		
 		printTitle("POKEMON", "|");
 		
-		Player computer = new Player(false);
+		Player computer = new Player();
 		Player user = new Player("Francesco");
 		System.out.println(computer);
 		System.out.println(user);
-
+		
 	}
 	
 	/** Function that prints the title in a more artistic way using a symbol passed from the user as a parameter.
@@ -40,6 +40,7 @@ public class PokemonRunner {
             }
             
             System.out.println(stringBuilder);
+            
         }
 	}
 	

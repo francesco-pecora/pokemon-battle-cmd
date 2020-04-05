@@ -5,7 +5,7 @@ public class Player {
 	private String name;
 	private Pokemon[] pokemonList;
 	private boolean isHuman;
-	private int POKEMON_SIZE = 3;  // number of pokemon for each player
+	private int POKEMON_SIZE = 1;  // number of pokemon for each player
 	
 	// constructors
 	public Player(String n) {
@@ -17,17 +17,13 @@ public class Player {
 		isHuman = true;
 	}
 	
-	public Player(boolean isIt) {
-		if(isIt == false) {
-			name = "Computer";
-			pokemonList = new Pokemon[POKEMON_SIZE];
-			for(int i = 0; i < POKEMON_SIZE; i++) {		// random pokemonList for computer using Pokemon constructor
-				pokemonList[i] = new Pokemon();
-			}
+	public Player() {
+		name = "Computer";
+		pokemonList = new Pokemon[POKEMON_SIZE];
+		for(int i = 0; i < POKEMON_SIZE; i++) {		// random pokemonList for computer using Pokemon constructor
+			pokemonList[i] = new Pokemon();
 		}
-		else {
-			throw new IllegalStateException("If a human player, pass the name as a String to the constructor...");
-		}
+		isHuman = false;
 	}
 	
 	// methods for class data
