@@ -5,13 +5,27 @@ import java.awt.Font;
 public class PokemonRunner {
 
 	public static void main(String[] args) {
-		
-		printTitle("POKEMON", "|");
+		//printTitle("POKEMON", "|");
 		
 		Player computer = new Player();
 		Player user = new Player("Francesco");
-		System.out.println(computer);
-		System.out.println(user);
+		
+		Pokemon p1 = user.choosePokemon();
+		Pokemon p2 = computer.choosePokemon();
+		
+		System.out.println("User Pokemon: ");
+		System.out.println(p1);
+		System.out.println("Computer Pokemon: ");
+		System.out.println(p2);
+		
+		System.out.println("Choose your attack!");
+		Attack a1 = user.chooseAttack(p1);
+		Attack a2 = computer.chooseAttack(p2);
+		
+		System.out.println("User Attack: ");
+		System.out.println(a1);
+		System.out.println("Computer Attack: ");
+		System.out.println(a2);
 		
 	}
 	

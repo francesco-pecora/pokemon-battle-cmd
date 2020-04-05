@@ -80,4 +80,14 @@ public class Pokemon {
 	public Attack[] getAttackList() {
 		return attackList;
 	}
+	
+	public String toString() {
+		String s = "";
+		s += name;
+		s += "\n";
+		s += type;
+		s += "\n";
+		s += health;
+		return s;
+	}
 }

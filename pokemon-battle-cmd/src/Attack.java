@@ -83,4 +83,16 @@ public class Attack {
 		return damage;
 	}
 	
+	public String toString() {
+		String s = "";
+		s += name;
+		s += "\n";
+		s += type;
+		s += "\n";
+		s += possibleHits;
+		s += "\n";
+		s += damage;
+		return s;
+	}
+	
 }
