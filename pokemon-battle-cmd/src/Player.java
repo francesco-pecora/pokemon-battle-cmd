@@ -8,7 +8,7 @@ public class Player {
 	private String name;
 	private Pokemon[] pokemonList;
 	private boolean isHuman;
-	private int POKEMON_SIZE = 1;  // number of pokemon for each player
+	private int POKEMON_SIZE = 2;  // number of pokemon for each player
 	
 	public HashMap<String, String> damageRelations;
 	Scanner input;
@@ -64,7 +64,7 @@ public class Player {
 			System.out.println(name + "! Choose your Pokemon from this list inserting the number...");
 			int index = 1;
 			for(Pokemon poke : pokemonList) {
-				if(!(poke.getHealth() <= 0)) System.out.println(index++ + ") \t" + poke.getName() + "  " + poke.getType() + "  " + poke.getHealth());
+				if(!(poke.getHealth() <= 0)) System.out.println(index++ + ") \t" + poke);
 				else index++;
 			}
 			input = new Scanner(System.in);

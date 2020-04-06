@@ -5,7 +5,7 @@ import java.awt.Font;
 public class PokemonRunner {
 
 	public static void main(String[] args) {
-		//printTitle("POKEMON", "|");
+		printTitle("POKEMON", "|");
 		
 		Attack att1;
 		Attack att2;
@@ -32,6 +32,10 @@ public class PokemonRunner {
 			
 			System.out.println("User Pokemon: ");
 			System.out.println(poke1);
+			
+			System.out.println();
+			System.out.println();
+			
 			System.out.println("Computer Pokemon: ");
 			System.out.println(poke2);
 			
