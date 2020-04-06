@@ -114,7 +114,7 @@ public class Player {
 	 * @param poke2 the Pokemon which is getting attacked
 	 * @param att the attack used by poke1 to poke2
 	 */
-	public int attack(Pokemon poke1, Pokemon poke2, Attack att) {
+	public boolean attack(Pokemon poke1, Pokemon poke2, Attack att) {
 
 		double coeff; // this value is gonna multiply the damage. If the type of Poke1 is super efficient against the type of Poke2 the damage will be higher
 		
@@ -131,8 +131,8 @@ public class Player {
 		poke2.setHealth(poke2.getHealth() - (coeff * att.getDamage()));
 		att.setPossibleHits(att.getPossibleHits() - 1);
 		
-		if(poke2.getHealth() <= 0) return 1; //if this function returns 1 we know the battle is ended
-		else return 0; // if the function returns 0, then the battle is still continuing
+		if(poke2.getHealth() <= 0) return true; //if this function returns 1 we know the battle is ended
+		else return false; // if the function returns 0, then the battle is still continuing
 	}
 	
 	// output function

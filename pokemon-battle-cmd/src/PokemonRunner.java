@@ -16,13 +16,13 @@ public class PokemonRunner {
 		int POKEMON_SIZE_USER = user.getPOKEMON_SIZE();
 		int POKEMON_SIZE_COMPUTER = computer.getPOKEMON_SIZE();
 		
-		int isBattleOver = 0;
+		boolean isBattleOver;
 		
 		start:
 			
 		while(POKEMON_SIZE_USER > 0 && POKEMON_SIZE_COMPUTER > 0) {
 			
-			isBattleOver = 0;
+			isBattleOver = false;
 			
 			Pokemon poke1 = user.choosePokemon();
 			Pokemon poke2 = computer.choosePokemon();
@@ -60,7 +60,7 @@ public class PokemonRunner {
 				
 				isBattleOver = user.attack(poke1, poke2, att1);
 				System.out.println("\nYour pokemon is using " + att1.getName() + " on the computer's pokemon...\n");
-				if(isBattleOver == 1) {
+				if(isBattleOver) {
 					System.out.println("\nYour pokemon killed the computer's pokemon! The computer pokemon does not have any more HPs");
 					POKEMON_SIZE_COMPUTER -= 1;
 					continue start;
@@ -68,7 +68,7 @@ public class PokemonRunner {
 				
 				isBattleOver = computer.attack(poke2, poke1, att2);
 				System.out.println("\nComputer's pokemon is using " + att2.getName() + " on the your pokemon...\n");
-				if(isBattleOver == 1) {
+				if(isBattleOver) {
 					System.out.println("\nThe computer's pokemon killed your pokemon! Your pokemon does not have any more HPs");
 					POKEMON_SIZE_USER -= 1;
 					continue start;
