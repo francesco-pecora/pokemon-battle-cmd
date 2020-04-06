@@ -85,12 +85,13 @@ public class Attack {
 	
 	public String toString() {
 		String s = "";
+		s += "\nAttack Name: ";
 		s += name;
-		s += "\n";
+		s += "\nAttack Type: ";
 		s += type;
-		s += "\n";
+		s += "\nPossible Hits: ";
 		s += possibleHits;
-		s += "\n";
+		s += "\nDamage: ";
 		s += damage;
 		return s;
 	}

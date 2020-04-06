@@ -8,12 +8,12 @@ public class Pokemon {
 	// class data
 	private String name;
 	private String type;
-	private int health;
+	private double health;
 	private Attack[] attackList;
 	
 	Scanner input;
 	
-	private int POKEMON_SIZE = 3;  // number of pokemon a player can have
+	private int POKEMON_SIZE = 3;  // number of pokemon available
 	private int ATTACK_SIZE = 4;   // number of attacks each pokemon has
 	private String PATH = "C:\\Users\\franc\\Desktop\\gitHubRepositories\\pokemon-battle-cmd\\pokemon-battle-cmd\\src\\pokemon\\";
 	
@@ -70,10 +70,10 @@ public class Pokemon {
 		return type;
 	}
 	
-	public void setHealth(int h) {
+	public void setHealth(double h) {
 		health = h;
 	}
-	public int getHealth() {
+	public double getHealth() {
 		return health;
 	}
 	
@@ -83,10 +83,11 @@ public class Pokemon {
 	
 	public String toString() {
 		String s = "";
+		s += "\nPokemon Name: ";
 		s += name;
-		s += "\n";
+		s += "\nPokemon Type: ";
 		s += type;
-		s += "\n";
+		s += "\nPokemon Health: ";
 		s += health;
 		return s;
 	}

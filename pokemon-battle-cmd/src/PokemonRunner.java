@@ -7,26 +7,79 @@ public class PokemonRunner {
 	public static void main(String[] args) {
 		//printTitle("POKEMON", "|");
 		
+		Attack att1;
+		Attack att2;
+		
 		Player computer = new Player();
 		Player user = new Player("Francesco");
 		
-		Pokemon p1 = user.choosePokemon();
-		Pokemon p2 = computer.choosePokemon();
+		int POKEMON_SIZE_USER = user.getPOKEMON_SIZE();
+		int POKEMON_SIZE_COMPUTER = computer.getPOKEMON_SIZE();
 		
-		System.out.println("User Pokemon: ");
-		System.out.println(p1);
-		System.out.println("Computer Pokemon: ");
-		System.out.println(p2);
+		int isBattleOver = 0;
 		
-		System.out.println("Choose your attack!");
-		Attack a1 = user.chooseAttack(p1);
-		Attack a2 = computer.chooseAttack(p2);
-		
-		System.out.println("User Attack: ");
-		System.out.println(a1);
-		System.out.println("Computer Attack: ");
-		System.out.println(a2);
-		
+		start:
+			
+		while(POKEMON_SIZE_USER > 0 && POKEMON_SIZE_COMPUTER > 0) {
+			
+			isBattleOver = 0;
+			
+			Pokemon poke1 = user.choosePokemon();
+			Pokemon poke2 = computer.choosePokemon();
+			
+			System.out.println();
+			System.out.println();
+			
+			System.out.println("User Pokemon: ");
+			System.out.println(poke1);
+			System.out.println("Computer Pokemon: ");
+			System.out.println(poke2);
+			
+			System.out.println();
+			System.out.println();
+			
+			while(true) {
+				System.out.println("Choose your attack!");
+				att1 = user.chooseAttack(poke1);
+				att2 = computer.chooseAttack(poke2);
+				
+				System.out.println();
+				System.out.println();
+				
+				System.out.println("User Attack: ");
+				System.out.println(att1);
+				
+				System.out.println();
+				System.out.println();
+				
+				System.out.println("Computer Attack: ");
+				System.out.println(att2);
+				
+				System.out.println();
+				System.out.println();
+				
+				isBattleOver = user.attack(poke1, poke2, att1);
+				System.out.println("\nYour pokemon is using " + att1.getName() + " on the computer's pokemon...\n");
+				if(isBattleOver == 1) {
+					System.out.println("\nYour pokemon killed the computer's pokemon! The computer pokemon does not have any more HPs");
+					POKEMON_SIZE_COMPUTER -= 1;
+					continue start;
+				}
+				
+				isBattleOver = computer.attack(poke2, poke1, att2);
+				System.out.println("\nComputer's pokemon is using " + att2.getName() + " on the your pokemon...\n");
+				if(isBattleOver == 1) {
+					System.out.println("\nThe computer's pokemon killed your pokemon! Your pokemon does not have any more HPs");
+					POKEMON_SIZE_USER -= 1;
+					continue start;
+				}
+				System.out.println("\nInfo about the two pokemons after the attacks:\n");
+				System.out.println(poke1);
+				System.out.println(poke2);
+			}
+		}
+		if(POKEMON_SIZE_USER == 0) System.out.println("You lost the battle. Try again next time...");
+		else if(POKEMON_SIZE_COMPUTER == 0) System.out.println("You won! Go heal you pokemon now!");
 	}
 	
 	/** Function that prints the title in a more artistic way using a symbol passed from the user as a parameter.
