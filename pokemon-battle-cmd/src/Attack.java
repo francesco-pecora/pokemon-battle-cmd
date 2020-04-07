@@ -22,7 +22,7 @@ public class Attack {
 			if(pokeType.equals("fire")) input = new Scanner(new File(PATH + "FireAttacks"));
 			else if(pokeType.equals("grass")) input = new Scanner(new File(PATH + "GrassAttacks"));
 			else if(pokeType.equals("water")) input = new Scanner(new File(PATH + "WaterAttacks"));
-			else throw new IllegalStateException("Wrong Pokemon type passed to the Attack Constructor...");
+			else throw new IllegalArgumentException("Wrong Pokemon type passed to the Attack Constructor...");
 		}
 		catch (Exception e) {
 			 System.out.println("Error opening the file...");

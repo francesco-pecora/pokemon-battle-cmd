@@ -30,7 +30,7 @@ public class Pokemon {
 			if(randomNumber == 1) input = new Scanner(new File(PATH + "Bulbasaur"));
 			else if(randomNumber == 2) input = new Scanner(new File(PATH + "Charmender"));
 			else if(randomNumber == 3) input = new Scanner(new File(PATH + "Squirtle"));
-			else throw new IllegalStateException("Random number is not in the right range...");
+			else throw new ArrayIndexOutOfBoundsException("Random number is not in the right range...");
 		}
 		 catch (Exception e) {
 			 System.out.println("Error opening the file...");
